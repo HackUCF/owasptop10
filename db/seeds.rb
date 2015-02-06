@@ -12,8 +12,16 @@ CSV.foreach("/Users/alynch/Downloads/fng/people.csv") do |row|
   ssn = row[5]
   cc = row[3]
   password = row[1]
-  User.create(name: name, email: email, ssn: ssn, cc: cc, password: password)
+  FakeUser.create(name: name, email: email, ssn: ssn, cc: cc, password: password)
 end
 
-User.first.destroy # get rid of header row
-User.create(name: "Alex", email: "alex.lynch@guidepointsecurity.com", ssn: "123-12-1234", cc: "1111111", password: "cool")
+FakeUser.first.destroy # get rid of header row
+
+require 'securerandom'
+
+Password.create(username: "Alice", website: "gmail.com", pw: SecureRandom.hex)
+Password.create(username: "Bob",website: "yahoo.com", pw: SecureRandom.hex)
+Password.create(username: "Alice",website: "reddit.com", pw: SecureRandom.hex)
+Password.create(username: "Bob",website: "somethingawful.com", pw: SecureRandom.hex)
+Password.create(username: "Alice",website: "guidepointsecurity.com", pw: SecureRandom.hex)
+Password.create(username: "Bob",website: "m42club.com", pw: SecureRandom.hex)

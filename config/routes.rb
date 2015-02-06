@@ -1,5 +1,25 @@
 Rails.application.routes.draw do
-  get 'owasp_6/index'
+
+  get 'owasp1' => 'owasp1#index'
+
+  get 'owasp2/' => 'owasp2#index'
+  post 'owasp2/login' => 'owasp2#login'
+
+  get 'owasp3/' => 'owasp3#index'
+  post 'owasp3' => 'owasp3#add'
+  get 'owasp3/clear'
+
+  get 'owasp4/' => 'owasp4#index'
+  get 'owasp4/pw/:id' => 'owasp4#pw'
+
+  get 'owasp5/' => 'owasp5#index'
+  get 'owasp5/show/:id' => 'owasp5#show'
+
+  get 'owasp6/' => 'owasp6#index'
+  get 'owasp6/admin'
+
+  root 'application#index'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

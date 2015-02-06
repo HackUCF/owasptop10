@@ -11,7 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150206054228) do
+ActiveRecord::Schema.define(version: 20150206115126) do
+
+  create_table "comments", force: true do |t|
+    t.text     "username"
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fake_users", force: true do |t|
+    t.text     "name"
+    t.text     "email"
+    t.text     "ssn"
+    t.text     "cc"
+    t.text     "password"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "passwords", force: true do |t|
+    t.text     "website"
+    t.text     "pw"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "username"
+  end
 
   create_table "users", force: true do |t|
     t.text     "name"
