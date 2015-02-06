@@ -18,6 +18,13 @@ Rails.application.routes.draw do
   get 'owasp6/' => 'owasp6#index'
   get 'owasp6/admin'
 
+  get 'owasp7/' => 'owasp7#index'
+  post 'owasp7/login' => 'owasp7#login'
+  get 'owasp7/add' => 'owasp7#add'
+  get 'owasp7/logout' => 'owasp7#logout'
+  get 'owasp7/clear' => 'owasp7#clear'
+
+
   root 'application#index'
 
 

@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150206115126) do
+ActiveRecord::Schema.define(version: 20150206181659) do
 
   create_table "comments", force: true do |t|
     t.text     "username"
     t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "cat"
   end
 
   create_table "fake_users", force: true do |t|
