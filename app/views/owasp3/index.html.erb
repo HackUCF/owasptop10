@@ -1,0 +1,25 @@
+<center><code>Cross-Site Scripting</code><br/></center>
+
+<h2>My Cool Comment Page</h2>
+
+<% if @comments.count > 0 %>
+    <table>
+      <tbody>
+      <% @comments.each do |comment| %>
+          <tr>
+            <td><%= comment.username %> says:</td>
+            <td><%= comment.comment.html_safe %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+<% else %>
+    <h5>No comments</h5>
+<% end %>
+
+<%= form_for :comment do |f| %>
+    Your text: <%= f.text_field :comment %><br />
+    <%= f.submit %>
+<% end %>
+
+<%= link_to "Clear Comments", controller: 'owasp3', action: 'clear' %>

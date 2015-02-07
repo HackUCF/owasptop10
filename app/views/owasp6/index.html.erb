@@ -1,0 +1,16 @@
+<center><code>Sensitive Data Disclosure</code><br/></center>
+
+<h1>User List</h1>
+<!-- <%= link_to "View As Admin (IN TESTING - NOT FOR USE)", controller: "owasp6", action: "admin" %> -->
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.name %></td>
+    </tr>
+  <% end %>
+</table>

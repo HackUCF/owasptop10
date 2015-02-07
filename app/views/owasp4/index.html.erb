@@ -1,0 +1,32 @@
+<style>
+    tr:hover {
+        background-color: #f4f2ef;
+    }
+</style>
+
+<center><code>Insecure Direct Object Reference</code><br/></center>
+<br/>
+<h3>Your Saved Passwords, <%= @username_to_assume %></h3>
+
+<table>
+  <thead>
+  <tr>
+    <th>Website</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @passwords.each do |pw| %>
+      <tr class="clickableRow" href="<%= url_for(controller: 'owasp4', action: 'pw', id: pw.id) %>">
+        <td><%= pw.website %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<script>
+    jQuery(document).ready(function($) {
+        $(".clickableRow").click(function() {
+            window.document.location = $(this).attr("href");
+        });
+    });
+</script>

@@ -1,0 +1,32 @@
+<style>
+    tr:hover {
+        background-color: #f4f2ef;
+    }
+</style>
+<center><code>Security Misconfiguration</code><br/></center>
+<h3>User List</h3>
+<h5>Click a user for more information</h5>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+      <tr class="clickableRow" href="<%= url_for(controller: 'owasp5', action: 'show', id: user.id) %>">
+        <td><%= user.id %></td>
+        <td><%= user.name %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<script>
+jQuery(document).ready(function($) {
+  $(".clickableRow").click(function() {
+    window.document.location = $(this).attr("href");
+  });
+});
+</script>

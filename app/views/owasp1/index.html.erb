@@ -1,0 +1,27 @@
+<center><code>Injection</code><br/></center>
+
+<h3>User List</h3>
+
+<form>
+  <label>Search for name:</label><input type="text" size="50" name="q"/>
+</form>
+
+<% if (@debug) %>
+    <p>Query:</p><code><%= @sql %></code>
+<% end %>
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @results.each() do |row| %>
+    <tr>
+      <td><%= row[1] %></td>
+      <td><%= row[2] %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

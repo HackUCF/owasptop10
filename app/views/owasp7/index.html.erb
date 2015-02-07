@@ -1,0 +1,38 @@
+<center><code>Insecure Function Level Access Controls</code><br/></center>
+
+<% if (!@authed) %>
+  <h4>Please login before accessing this website!</h4>
+    <form method="POST" action="/owasp7/login">
+      <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+      <label>Name:</label> <input type="text" name="username"/>
+      <label>Pass:</label> <input type="password" name="password"/>
+      <br/>
+      <input type="Submit">
+    </form>
+<% else %>
+<h2>Cool Comment Page</h2>
+
+<% if @comments.count > 0 %>
+    <table>
+      <tbody>
+      <% @comments.each do |comment| %>
+          <tr>
+            <td><%= comment.username %> says:</td>
+            <td><%= comment.comment %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+<% else %>
+    <h5>No comments</h5>
+<% end %>
+
+<form action="/owasp7/add" method="GET">
+  <label>Comment:</label><input type="text" name="comment"/>
+  <input type="Submit"/>
+</form>
+
+<p><%= link_to "Clear Comments", controller: 'owasp7', action: 'clear' %></p>
+
+<p><%= link_to "Logout", controller: 'owasp7', action: 'logout' %></p>
+<% end %>

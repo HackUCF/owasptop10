@@ -1,0 +1,19 @@
+<h3>User <%= @user.id %></h3>
+<table class="hoverTable">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Credit Card#</th>
+  </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><%= @user.id %></td>
+        <td><%= @user.name %></td>
+        <td><%= @user.emaail %></td>
+        <td><%= decrypt(key: "5dc062bd59bbf01e363ee5d61216a730", value: @user.cc) %></td>
+      </tr>
+  </tbody>
+</table>

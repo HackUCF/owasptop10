@@ -1,0 +1,19 @@
+<center><code>Broken Authentication and Session Management</code><br/></center>
+
+<% if (!@authorized) %>
+  <h3>TOP SECRET Restricted Access only, please log in.</h3>
+  <form method="POST" action="/owasp2/login">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+    <label>Name:</label> <input type="text" name="username"/>
+    <label>Pass:</label> <input type="password" name="password"/>
+    <br/>
+    <input type="Submit">
+  </form>
+<% else %>
+    <h3>Welcome to the TOP SECRET cat site</h3>
+    <p><img style="height:150px;" src="https://i.imgur.com/fq2b6uE.jpg"/>
+    <img style="height:150px;" src="https://i.imgur.com/XyoVNfX.jpg"/></p>
+    <p><img style="height:150px;" src="https://i.imgur.com/cRiT5ff.jpg"/>
+    <img style="height:150px;" src="https://i.imgur.com/ceLllJB.jpg"/></p>
+
+<% end %>

@@ -1,0 +1,15 @@
+<center><code>Unvalidated Redirect</code><br/></center>
+
+<% if (!@authed) %>
+    <h5>Please login</h5>
+    <form method="POST" action="/owasp10/do_login">
+      <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+      <label>Name:</label> <input type="text" name="username"/>
+      <label>Pass:</label> <input type="password" name="password"/>
+      <input type="hidden" name="redir" value="<%= params[:redir] %>"/>
+      <br/>
+      <input type="Submit">
+    </form>
+<% else %>
+    <p><%= link_to(controller: 'owasp10', action: 'index') %></p>
+<% end %>

@@ -1,0 +1,8 @@
+<center><code>Unvalidated Redirect and Forwards</code><br/></center>
+
+<% if (!@authed) %>
+    <h5>Please <%= link_to("click here to log in", controller: 'owasp10', action: 'login', redir: '/owasp10/index') %></h5>
+<% else %>
+    <h3>You logged in ! :)</h3>
+    <p><%= link_to("Logout", controller: 'owasp10', action: 'logout') %></p>
+<% end %>
