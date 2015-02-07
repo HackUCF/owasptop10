@@ -11,3 +11,4 @@ Usage:
 * `rake db:create db:migrate db:seed`
 * `rails server`
 * go to http://localhost:3000/
+* don't run this on the internet, it is not secure
