@@ -24,6 +24,14 @@ Rails.application.routes.draw do
   get 'owasp7/logout' => 'owasp7#logout'
   get 'owasp7/clear' => 'owasp7#clear'
 
+  get 'owasp10/' => 'owasp10#index'
+  get 'owasp10/index' => 'owasp10#index'
+  get 'owasp10/login' => 'owasp10#login'
+  post 'owasp10/do_login' => 'owasp10#do_login'
+
+  get 'owasp10/logout' => 'owasp10#logout'
+
+
 
   root 'application#index'
 
