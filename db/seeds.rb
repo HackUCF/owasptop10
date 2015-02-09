@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'csv'
-CSV.foreach("/Users/alynch/Downloads/fng/people.csv") do |row|
+CSV.foreach(Rails.root.to_s()+"/people.csv") do |row|
   name = row[4]
   email = row[2]
   ssn = row[5]

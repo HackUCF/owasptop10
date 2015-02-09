@@ -39,14 +39,4 @@ ActiveRecord::Schema.define(version: 20150206181659) do
     t.text     "username"
   end
 
-  create_table "users", force: true do |t|
-    t.text     "name"
-    t.text     "email"
-    t.text     "ssn"
-    t.text     "cc"
-    t.text     "password"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
 end
