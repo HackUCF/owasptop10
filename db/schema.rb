@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150206181659) do
 
-  create_table "comments", force: true do |t|
+  create_table "comments", force: :cascade do |t|
     t.text     "username"
     t.text     "comment"
     t.datetime "created_at"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20150206181659) do
     t.text     "cat"
   end
 
-  create_table "fake_users", force: true do |t|
+  create_table "fake_users", force: :cascade do |t|
     t.text     "name"
     t.text     "email"
     t.text     "ssn"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20150206181659) do
     t.datetime "updated_at"
   end
 
-  create_table "passwords", force: true do |t|
+  create_table "passwords", force: :cascade do |t|
     t.text     "website"
     t.text     "pw"
     t.datetime "created_at"
